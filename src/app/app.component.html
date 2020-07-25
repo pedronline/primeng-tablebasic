@@ -1,0 +1,28 @@
+<h3 class="first">Basic</h3>
+<p-table [value]="cars">
+    <ng-template pTemplate="header">
+        <tr>
+          <th>Brand</th>
+            <th>Vin</th>
+            <th>Year</th>
+            
+            <th>Color</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-car>
+        <tr>
+          <td>{{car.brand}}</td>
+            <td>{{car.vin}}</td>
+            <td>{{car.year}}</td>
+            
+            <td>{{car.color}}</td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="footer" let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{col.header}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
